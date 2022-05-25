@@ -17,7 +17,7 @@ public class VendingMachine_07 {
                     || insertedMoney == 1.0 || insertedMoney == 2.0) {
                 totalMoney = totalMoney + insertedMoney;
             } else {
-                System.out.printf("Cannot accept 0%.2f%n", insertedMoney);
+                System.out.printf("Cannot accept %.2f%n", insertedMoney);
             }
             command = scanner.nextLine();
 
@@ -43,6 +43,7 @@ public class VendingMachine_07 {
                     break;
                 default:
                     System.out.printf("Invalid product%n");
+                    input = scanner.nextLine();
                     continue;
             }
             if (totalMoney >= price) {
