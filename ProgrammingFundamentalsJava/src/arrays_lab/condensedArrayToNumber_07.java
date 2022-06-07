@@ -13,7 +13,7 @@ public class condensedArrayToNumber_07 {
 
         if (numbersArr.length > 1) {
             int index = 0;
-            while (numbersArr[1] != 1) {
+            while (true) {
                 int[] condensedArr = new int[numbersArr.length - 1 - index];
                 for (int i = 0; i < condensedArr.length; i++) {
                     condensedArr[i] = numbersArr[i] + numbersArr[i + 1];
