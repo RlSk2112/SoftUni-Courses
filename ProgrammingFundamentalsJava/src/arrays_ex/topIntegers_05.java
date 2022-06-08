@@ -9,21 +9,22 @@ public class topIntegers_05 {
 
         int[] numbersArray = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-        for (int i = 0; i <= numbersArray.length - 1; i++) {
-            int currentElement = numbersArray[i];
-
-            boolean isTop = false;
-            for (int j = i + 1; j <= numbersArray.length - 1; j++) {
-                int nextElement = numbersArray[j];
-
-                if (currentElement > nextElement) {
-                    isTop = true;
+        for (int index = 0; index < numbersArray.length - 1; index++) {
+            int currentElement = numbersArray[index];
+            boolean isBigger = false;
+            for (int rightIndex = index + 1; rightIndex <= numbersArray.length - 1; rightIndex++) {
+                int rightElement = numbersArray[rightIndex];
+                if (currentElement > rightElement) {
+                    isBigger = true;
+                } else {
+                    isBigger = false;
+                    break;
                 }
-
             }
-            if (isTop) {
+            if (isBigger) {
                 System.out.print(currentElement + " ");
             }
         }
+        System.out.println(numbersArray[numbersArray.length - 1]);
     }
 }
